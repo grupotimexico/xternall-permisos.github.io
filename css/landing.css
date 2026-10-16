@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Estilos solo de esta landing (Permisos y Licencias).
+   Usan únicamente tokens del UI Kit; no forman parte del kit.
+   ========================================================================== */
+
+/* BLOQUE (solo esta página): hero claro — variante de hero-form sobre fondo suave con cuadrícula */
+.p-hero-light {
+  position: relative;
+  background: url("../assets/bg-grid.svg") center top no-repeat, linear-gradient(180deg, var(--x-bg-soft) 0%, var(--x-bg-50) 100%);
+  color: var(--x-text);
+}
+.p-hero-light .x-display strong { color: var(--x-blue); }
+.p-hero-light .b-hero__desc { color: var(--x-text); }
+.p-hero-light .x-checklist { display: flex; flex-wrap: wrap; gap: 10px 28px; color: var(--x-navy); }   /* en fila; en móvil, en columna */
+@media (max-width: 1249px) and (min-width: 981px) {
+  .p-hero-light .b-hero__grid { grid-template-columns: 1.25fr .9fr; gap: 40px; }
+  .p-hero-light .x-checklist { gap: 10px 14px; font-size: var(--x-fs-small); }
+}
+.p-hero-light .b-hero__connect { color: var(--x-muted); }
+.p-hero-light .b-hero__connect .x-ico { color: var(--x-blue); }
+.p-hero-light .b-demo { box-shadow: var(--x-shadow); border: 1px solid var(--x-border); }
+
+/* BLOQUE (solo esta página): context — un nodo central con cuatro factores alrededor */
+.p-context {
+  position: relative; isolation: isolate;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px 12px; align-items: center;
+  grid-template-areas: "a . b" ". c ." "d . e";
+  padding: 12px 0;
+}
+.p-context::before, .p-context::after {   /* anillos */
+  content: ""; position: absolute; z-index: -1; left: 50%; top: 50%;
+  border: 1px dashed var(--x-border); border-radius: 50%; transform: translate(-50%, -50%);
+}
+.p-context::before { width: 78%; aspect-ratio: 1; }
+.p-context::after { width: 46%; aspect-ratio: 1; background: var(--x-bg-50); }
+.p-context .b-flow__node { gap: 2px; padding: 14px 12px; border-radius: var(--x-r-md); }
+.p-context .b-flow__node .x-icon { width: 40px; height: 40px; margin-bottom: 6px; border-radius: 12px; }
+.p-context .b-flow__node .x-icon svg { width: 20px; height: 20px; }
+.p-context .b-flow__node strong { font-size: 15px; line-height: 1.3; }
+.p-context .b-flow__node span { font-size: 13px; }
+.p-context__a { grid-area: a; }
+.p-context__b { grid-area: b; }
+.p-context__c, .p-context__center { grid-area: c; }
+.p-context__d { grid-area: d; }
+.p-context__e { grid-area: e; }
+.p-context__center { padding: 22px 14px; box-shadow: var(--x-shadow); }
+.p-context__center .x-icon { width: 56px; height: 56px; }
+.p-context__center .x-icon svg { width: 28px; height: 28px; }
+.b-evidence-split .b-example__result { margin-top: 8px; }
+
+@media (max-width: 767px) {
+  .p-hero-light .x-checklist { flex-direction: column; }
+  .p-context { grid-template-columns: 1fr 1fr; grid-template-areas: "c c" "a b" "d e"; }
+  .p-context::before, .p-context::after { display: none; }
+}

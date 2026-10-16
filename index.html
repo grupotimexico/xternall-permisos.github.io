@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xternall Permisos y Licencias | Todas tus sucursales bajo control</title>
+<meta name="description" content="Organiza permisos, licencias y documentos por establecimiento. Anticipa vencimientos, asigna responsables y prepara tus expedientes para inspecciones.">
+<meta property="og:title" content="Xternall Permisos y Licencias">
+<meta property="og:description" content="Cada establecimiento. Cada responsable. Cada vencimiento.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xternall Permisos y Licencias">
+<meta name="twitter:description" content="Cada establecimiento. Cada responsable. Cada vencimiento.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/xternall-ui.css">
+<link rel="stylesheet" href="css/blocks.css">
+<link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+<!-- Íconos (estilo lineal, 24px) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 4.5 4h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-user-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></symbol>
+    <symbol id="i-folder-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v4.1"/><circle cx="17" cy="17" r="3"/><path d="m21 21-1.9-1.9"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-file-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 14l2 2 4-4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l3-2 3 2 2-2 2 2 3-2 3 2V2l-3 2-3-2-2 2-2-2-3 2Z"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow-circle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.7 5.3 4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-1.4-1.4l2.3-2.3H7.5a1 1 0 1 1 0-2h6.1l-2.3-2.3a1 1 0 0 1 1.4-1.4Z"/></symbol>
+    <symbol id="i-chevron-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7.5 10 4.5 4.5 4.5-4.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="currentColor"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v.4l-10 6.1L2 6.9v-.4Z"/><path d="M2 9.2V17.5A2.5 2.5 0 0 0 4.5 20h15a2.5 2.5 0 0 0 2.5-2.5V9.2l-9.5 5.8a1 1 0 0 1-1 0L2 9.2Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.55h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.87.25-1.46 1.5-1.46h1.55V4.47A20.6 20.6 0 0 0 14.3 4.3c-2.25 0-3.8 1.37-3.8 3.9v2.3H8v3h2.5V21h3Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
+  </defs>
+</svg>
+
+<a class="x-skip" href="#contenido">Saltar al contenido</a>
+
+<!-- BLOQUE: header (homologado con el menú de xternall.com) -->
+<header class="x-header" data-header>
+  <div class="x-container x-header__inner">
+    <a class="x-logo x-logo--long" href="#inicio" aria-label="Xternall Permisos y Licencias, inicio">
+      <img src="assets/xternall-logo.svg" alt="Xternall" width="188" height="39">
+      <span class="x-logo__tag x-logo__tag--long">PERMISOS Y LICENCIAS</span>
+    </a>
+    <button class="x-menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle>
+      <svg class="x-menu-btn__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg class="x-menu-btn__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <nav class="x-nav" id="menu-principal" aria-label="Navegación principal" data-open="false">
+      <ul class="x-nav__list">
+        <li><a href="#solucion">La solución</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#expediente">Tu expediente</a></li>
+        <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        <li class="x-nav__has-sub">
+          <button class="x-nav__sub-toggle" type="button" aria-expanded="false" aria-controls="sub-soluciones">Otras Soluciones<span class="x-nav__chev"><svg><use href="#i-chevron"/></svg></span></button>
+          <ul class="x-nav__sub" id="sub-soluciones">
+            <li><a href="https://xternall.com/repse-y-cumplimiento/">REPSE y Cumplimiento <svg><use href="#i-arrow-circle"/></svg></a></li>
+            <li><a href="https://xternall.com/portal-de-proveedores/">Portal de Proveedores <svg><use href="#i-arrow-circle"/></svg></a></li>
+            <li><a href="https://xternall.com/contracts/">Contracts <svg><use href="#i-arrow-circle"/></svg></a></li>
+            <li><a href="https://xternall.com/prevencion-de-riesgo-fiscal/">Prevención de Riesgo Fiscal <svg><use href="#i-arrow-circle"/></svg></a></li>
+            <li><a href="https://xternall.com/validacion-fiscal-de-proveedores-de-riesgo/">Validación Fiscal <svg><use href="#i-arrow-circle"/></svg></a></li>
+          </ul>
+        </li>
+        <li class="x-nav__cta"><a class="x-btn x-btn--primary" href="#demo">Agenda una DEMO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- BLOQUE: hero-form -->
+  <section class="b-hero p-hero-light" id="inicio">
+    <div class="x-container b-hero__grid">
+      <div class="b-hero__copy">
+        <p class="x-eyebrow">CONTROL PARA EMPRESAS CON MÚLTIPLES ESTABLECIMIENTOS</p>
+        <h1 class="x-display">Controla los permisos y licencias de<br><strong>todas tus sucursales.</strong></h1>
+        <p class="b-hero__desc">Identifica pendientes, anticipa vencimientos y mantén la documentación organizada para la operación y las inspecciones.</p>
+        <ul class="x-checklist x-checklist--light">
+          <li>Cada establecimiento.</li>
+          <li>Cada responsable.</li>
+          <li>Cada vencimiento.</li>
+        </ul>
+        <p class="b-hero__connect"><svg class="x-ico"><use href="#i-layout"/></svg><span>Una vista corporativa.<br>El detalle de cada centro de trabajo.</span></p>
+        <div class="b-hero__cta">
+          <a class="x-btn x-btn--outline" href="#como-funciona">Así se ve tener el control <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="b-demo" id="demo">
+        <h2 class="x-h4">Conoce Xternall</h2>
+        <p class="b-demo__intro">Solicita una demo para tu empresa.</p>
+        <!-- Envío al CRM: la configuración (endpoint y api-key) está en js/blocks.js → "CONFIGURACIÓN CRM" -->
+        <form class="b-demo__form" data-demo-form novalidate
+              data-busy="Registrando solicitud…"
+              data-error="No se pudo registrar. Intenta nuevamente."
+              data-error-network="No pudimos conectar. Intenta nuevamente.">
+          <div class="x-field"><label class="x-label" for="demo-name">Nombre completo</label><input class="x-input" id="demo-name" name="name" placeholder="Tu nombre y apellido" autocomplete="name" minlength="2" maxlength="100" required></div>
+          <div class="x-field"><label class="x-label" for="demo-company">Empresa</label><input class="x-input" id="demo-company" name="company" placeholder="Nombre de tu empresa" autocomplete="organization" minlength="2" maxlength="160" required></div>
+          <div class="x-field"><label class="x-label" for="demo-email">Correo empresarial</label><input class="x-input" id="demo-email" name="email" type="email" placeholder="nombre@empresa.com" autocomplete="email" maxlength="254" required></div>
+          <div class="x-field"><label class="x-label" for="demo-locations">¿Cuántos establecimientos administras?</label>
+            <select class="x-select" id="demo-locations" name="locations" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option>1 establecimiento</option>
+              <option>2–10 establecimientos</option>
+              <option>11–50 establecimientos</option>
+              <option>51–200 establecimientos</option>
+              <option>Más de 200 establecimientos</option>
+            </select>
+          </div>
+          <div class="b-demo__honeypot" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <label class="x-check"><input type="checkbox" name="consent" id="demo-consent" required> Autorizo el uso de estos datos para atender mi solicitud de demo.</label>
+          <button class="x-btn x-btn--primary x-btn--block" type="submit" data-label="Solicitar una demo">Solicitar una demo</button>
+          <p class="b-demo__error" role="alert" hidden></p>
+          <p class="b-demo__foot"><svg class="x-ico"><use href="#i-lock"/></svg><span>Sin compromiso</span></p>
+        </form>
+        <div class="b-demo__success" role="status" tabindex="-1" hidden>
+          <span class="x-icon"><svg><use href="#i-check-circle"/></svg></span>
+          <strong>Tu solicitud quedó registrada.</strong>
+          <p>Guardamos tus datos y tu interés en una demostración de Xternall Permisos y Licencias.</p>
+          <div class="b-demo__folio" data-folio hidden><small>Tu folio de solicitud</small><b></b><small>Conserva esta referencia para dar seguimiento.</small></div>
+          <a class="x-btn x-btn--outline" href="#como-funciona">Explorar la solución <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: strip -->
+  <div class="x-overlap b-strip">
+    <span>DONDE TU EMPRESA OPERA</span>
+    <div class="b-strip__items">
+      <span><svg class="x-ico"><use href="#i-store"/></svg>Tiendas y sucursales</span>
+      <span><svg class="x-ico"><use href="#i-building"/></svg>Oficinas y corporativos</span>
+      <span><svg class="x-ico"><use href="#i-factory"/></svg>Plantas y centros de distribución</span>
+    </div>
+  </div>
+
+  <!-- BLOQUE: steps (preguntas clave) -->
+  <section class="x-section" id="solucion">
+    <div class="x-container">
+      <div class="x-split-head">
+        <div>
+          <p class="x-eyebrow">Menos incertidumbre. Más claridad.</p>
+          <h2 class="x-h2">Más sucursales no deberían<br>significar <span class="x-h-accent">menos control.</span></h2>
+        </div>
+        <p>Cuando los documentos están en carpetas, correos y hojas de cálculo, responder lo más importante se vuelve difícil.</p>
+      </div>
+      <div class="b-steps">
+        <article class="x-card x-card--hover b-step">
+          <div class="b-step__top"><span class="x-icon"><svg><use href="#i-calendar"/></svg></span><span class="b-step__num">01</span></div>
+          <h3 class="x-title-card">¿Qué está por vencer?</h3>
+          <p>Identifica los plazos que requieren atención antes de que se conviertan en urgencias.</p>
+        </article>
+        <article class="x-card x-card--hover b-step">
+          <div class="b-step__top"><span class="x-icon"><svg><use href="#i-user-check"/></svg></span><span class="b-step__num">02</span></div>
+          <h3 class="x-title-card">¿Quién lo está atendiendo?</h3>
+          <p>Asigna un responsable y da seguimiento al avance de cada pendiente.</p>
+        </article>
+        <article class="x-card x-card--hover b-step">
+          <div class="b-step__top"><span class="x-icon"><svg><use href="#i-folder-search"/></svg></span><span class="b-step__num">03</span></div>
+          <h3 class="x-title-card">¿Dónde está el documento?</h3>
+          <p>Encuentra la evidencia junto con la sucursal y la obligación que respalda.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: app-demo -->
+  <section class="x-section x-section--soft x-section--curved" id="como-funciona">
+    <div class="x-container">
+      <div class="x-section-head">
+        <p class="x-eyebrow">Del corporativo a cada sucursal</p>
+        <h2 class="x-h2">Toda tu operación.<br><span class="x-h-accent">Una vista clara.</span></h2>
+        <p class="x-lead">Conoce dónde intervenir y pasa del panorama general<br>al detalle de cada establecimiento.</p>
+      </div>
+
+      <div class="b-app" data-app>
+        <div class="x-tabs" role="group" aria-label="Explorar vistas de ejemplo">
+          <button class="x-tab" type="button" data-view="corporativo" aria-pressed="true"><svg class="x-ico"><use href="#i-layout"/></svg>Vista corporativa</button>
+          <button class="x-tab" type="button" data-view="establecimiento" aria-pressed="false"><svg class="x-ico"><use href="#i-store"/></svg>Por establecimiento</button>
+          <button class="x-tab" type="button" data-view="alertas" aria-pressed="false"><svg class="x-ico"><use href="#i-bell"/></svg>Vencimientos</button>
+        </div>
+
+        <div class="b-window b-window--app">
+          <div class="b-window__head">
+            <span class="b-window__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="b-window__url"><svg class="x-ico"><use href="#i-lock"/></svg>xternall / permisos y licencias</span>
+            <span class="x-badge x-badge--plain">VISTA ILUSTRATIVA</span>
+          </div>
+          <div class="b-app__body">
+            <aside class="b-app__side">
+              <img src="assets/xternall-logo.svg" alt="Xternall" width="188" height="39">
+              <div class="b-app__org"><span class="x-avatar x-avatar--blue">GH</span><span><strong>Grupo Horizonte</strong><small>Organización de ejemplo</small></span></div>
+              <small class="b-app__navtitle">TU OPERACIÓN</small>
+              <button class="b-app__nav" type="button" data-view="corporativo" data-label="Mesa de control" aria-pressed="true"><svg class="x-ico"><use href="#i-layout"/></svg>Mesa de control</button>
+              <button class="b-app__nav" type="button" data-view="establecimiento" data-label="Establecimientos" aria-pressed="false"><svg class="x-ico"><use href="#i-building"/></svg>Establecimientos</button>
+              <button class="b-app__nav" type="button" data-view="alertas" data-label="Vencimientos" aria-pressed="false"><svg class="x-ico"><use href="#i-calendar"/></svg>Vencimientos</button>
+              <div class="b-app__note"><svg class="x-ico"><use href="#i-shield"/></svg><span>Control y evidencia<br><strong>en un mismo lugar.</strong></span></div>
+            </aside>
+
+            <div class="b-app__main">
+              <div class="b-app__crumb"><span>Mi organización <svg class="x-ico"><use href="#i-chevron-right"/></svg> <strong data-view-label>Mesa de control</strong></span><span class="x-avatar">AM</span></div>
+
+              <!-- Vista corporativa -->
+              <div data-view-panel="corporativo">
+                <div class="b-app__head">
+                  <div><h3>Tu operación, a la vista.</h3><p>Ubica los pendientes y decide dónde actuar.</p></div>
+                  <label><span class="x-sr-only">Región del ejemplo</span>
+                    <select class="x-select" data-filter-region="Todas las regiones">
+                      <option>Todas las regiones</option>
+                      <option>Norte</option>
+                      <option>Centro</option>
+                      <option>Occidente</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="b-kpis">
+                  <div class="b-kpi"><span class="x-icon"><svg><use href="#i-building"/></svg></span><span><strong data-count="all">08</strong><small>Establecimientos</small></span></div>
+                  <div class="b-kpi"><span class="x-icon x-icon--warning"><svg><use href="#i-clock"/></svg></span><span><strong data-count="warning">02</strong><small>Por vencer</small></span></div>
+                  <div class="b-kpi"><span class="x-icon x-icon--danger"><svg><use href="#i-alert"/></svg></span><span><strong data-count="danger">01</strong><small>Vencidas</small></span></div>
+                  <div class="b-kpi"><span class="x-icon x-icon--success"><svg><use href="#i-shield"/></svg></span><span><strong data-count="success">03</strong><small>Con evidencia</small></span></div>
+                </div>
+                <div class="b-app__card">
+                  <div class="b-app__cardhead">
+                    <h4>Seguimiento por establecimiento</h4>
+                    <div class="x-tabs x-tabs--sm" role="group" aria-label="Filtrar registros">
+                      <button class="x-tab" type="button" data-filter-mode="all" aria-pressed="true">Todos</button>
+                      <button class="x-tab" type="button" data-filter-mode="pending" aria-pressed="false">Pendientes</button>
+                    </div>
+                  </div>
+                  <div class="b-table-wrap">
+                    <table class="b-table" data-rows data-max="4">
+                      <thead><tr><th>Establecimiento / obligación</th><th>Responsable</th><th>Vencimiento</th><th>Estado</th><th><span class="x-sr-only">Detalle</span></th></tr></thead>
+                      <tbody>
+                      <tr data-region="Norte" data-tone="warning"><td><strong>Monterrey Centro</strong><small>Licencia de funcionamiento</small></td><td><span class="b-app__owner"><span class="x-avatar">AM</span>Ana Martínez</span></td><td>En 12 días</td><td><span class="x-badge x-badge--warning">Por vencer</span></td><td><button class="b-app__open" type="button" aria-label="Ver ejemplo de Monterrey Centro" data-fill-dialog="obligation-dialog" data-src="detail-01"><svg class="x-ico"><use href="#i-eye"/></svg></button></td></tr>
+                      <tr data-region="Norte" data-tone="danger"><td><strong>San Pedro</strong><small>Programa de protección civil</small></td><td><span class="b-app__owner"><span class="x-avatar x-avatar--blue">CG</span>Carlos García</span></td><td><span class="b-app__late">Hace 3 días</span></td><td><span class="x-badge x-badge--danger">Vencida</span></td><td><button class="b-app__open" type="button" aria-label="Ver ejemplo de San Pedro" data-fill-dialog="obligation-dialog" data-src="detail-02"><svg class="x-ico"><use href="#i-eye"/></svg></button></td></tr>
+                      <tr data-region="Norte" data-tone="info"><td><strong>Apodaca</strong><small>Dictamen de instalaciones</small></td><td><span class="b-app__owner"><span class="x-avatar">AM</span>Ana Martínez</span></td><td>En 90 días</td><td><span class="x-badge">En revisión</span></td><td><button class="b-app__open" type="button" aria-label="Ver ejemplo de Apodaca" data-fill-dialog="obligation-dialog" data-src="detail-03"><svg class="x-ico"><use href="#i-eye"/></svg></button></td></tr>
+                      <tr data-region="Occidente" data-tone="warning"><td><strong>Guadalajara Norte</strong><small>Permiso de anuncio</small></td><td><span class="b-app__owner"><span class="x-avatar x-avatar--soft">LP</span>Laura Pérez</span></td><td>En 24 días</td><td><span class="x-badge x-badge--warning">Por vencer</span></td><td><button class="b-app__open" type="button" aria-label="Ver ejemplo de Guadalajara Norte" data-fill-dialog="obligation-dialog" data-src="detail-04"><svg class="x-ico"><use href="#i-eye"/></svg></button></td></tr>
+                      <tr data-region="Occidente" data-tone="success" hidden><td><strong>Zapopan</strong><small>Licencia de funcionamiento</small></td><td><span class="b-app__owner"><span class="x-avatar x-avatar--soft">LP</span>Laura Pérez</span></td><td>En 210 días</td><td><span class="x-badge x-badge--success">Con evidencia</span></td><td><button class="b-app__open" type="button" aria-label="Ver ejemplo de Zapopan" data-fill-dialog="obligation-dialog" data-src="detail-05"><svg class="x-ico"><use href="#i-eye"/></svg></button></td></tr>
+                      <tr data-region="Centro" data-tone="success" hidden><td><strong>Querétaro Centro</strong><small>Programa de protección civil</small></td><td><span class="b-app__owner"><span class="x-avatar">DL</span>Diego López</span></td><td>En 160 días</td><td><span class="x-badge x-badge--success">Con evidencia</span></td><td><button class="b-app__open" type="button" aria-label="Ver ejemplo de Querétaro Centro" data-fill-dialog="obligation-dialog" data-src="detail-06"><svg class="x-ico"><use href="#i-eye"/></svg></button></td></tr>
+                      <tr data-region="Centro" data-tone="info" hidden><td><strong>CDMX Reforma</strong><small>Dictamen de instalaciones</small></td><td><span class="b-app__owner"><span class="x-avatar x-avatar--blue">SR</span>Sofía Ruiz</span></td><td>En 45 días</td><td><span class="x-badge">En revisión</span></td><td><button class="b-app__open" type="button" aria-label="Ver ejemplo de CDMX Reforma" data-fill-dialog="obligation-dialog" data-src="detail-07"><svg class="x-ico"><use href="#i-eye"/></svg></button></td></tr>
+                      <tr data-region="Centro" data-tone="success" hidden><td><strong>Puebla Centro</strong><small>Permiso de anuncio</small></td><td><span class="b-app__owner"><span class="x-avatar x-avatar--blue">SR</span>Sofía Ruiz</span></td><td>En 180 días</td><td><span class="x-badge x-badge--success">Con evidencia</span></td><td><button class="b-app__open" type="button" aria-label="Ver ejemplo de Puebla Centro" data-fill-dialog="obligation-dialog" data-src="detail-08"><svg class="x-ico"><use href="#i-eye"/></svg></button></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="b-app__empty" data-empty hidden>No hay pendientes en esta región del ejemplo.</p>
+                  <div class="b-app__foot"><span><span data-shown>4</span>&nbsp;de&nbsp;<span data-total>8</span>&nbsp;registros del ejemplo</span><span><svg class="x-ico"><use href="#i-check-circle"/></svg>Documentación y seguimiento conectados</span></div>
+                </div>
+              </div>
+
+              <!-- Vista por establecimiento -->
+              <div data-view-panel="establecimiento" hidden>
+                <div class="b-app__head">
+                  <div><h3>El detalle de cada sucursal.</h3><p>Un expediente vinculado a su operación.</p></div>
+                  <label><span class="x-sr-only">Establecimiento del ejemplo</span>
+                    <select class="x-select" data-fill-target="branch-card" data-fill-prefix="detail-">
+                      <option value="01">Monterrey Centro</option>
+                      <option value="02">San Pedro</option>
+                      <option value="03">Apodaca</option>
+                      <option value="04">Guadalajara Norte</option>
+                      <option value="05">Zapopan</option>
+                      <option value="06">Querétaro Centro</option>
+                      <option value="07">CDMX Reforma</option>
+                      <option value="08">Puebla Centro</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="b-branch" id="branch-card">
+                  <div class="b-branch__id">
+                    <span class="x-icon"><svg><use href="#i-store"/></svg></span>
+                    <span class="x-badge x-badge--warning" data-f-tone="tone" data-f="status">Por vencer</span>
+                    <h4 data-f="branch">Monterrey Centro</h4>
+                    <p><svg class="x-ico"><use href="#i-pin"/></svg>Región <span data-f="region">Norte</span></p>
+                    <div><small>Responsable</small><strong data-f="owner">Ana Martínez</strong></div>
+                    <div><small>Obligación en seguimiento</small><strong data-f="title">Licencia de funcionamiento</strong></div>
+                  </div>
+                  <div class="b-branch__files">
+                    <h4>Expediente de la sucursal</h4>
+                    <div><svg class="x-ico"><use href="#i-folder"/></svg><strong>Permisos y licencias</strong><small>3 archivos</small></div>
+                    <div><svg class="x-ico"><use href="#i-folder"/></svg><strong>Contratos e inmueble</strong><small>2 archivos</small></div>
+                    <div><svg class="x-ico"><use href="#i-folder"/></svg><strong>Servicios y comprobantes</strong><small>4 archivos</small></div>
+                    <div><svg class="x-ico"><use href="#i-folder"/></svg><strong>Inspecciones y evidencias</strong><small>1 archivos</small></div>
+                    <button class="x-btn x-btn--outline x-btn--sm" type="button" data-fill-dialog="obligation-dialog" data-src="detail-01">Ver obligación de ejemplo <svg><use href="#i-eye"/></svg></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Vista de vencimientos -->
+              <div data-view-panel="alertas" hidden>
+                <div class="b-app__head">
+                  <div><h3>Anticípate al siguiente vencimiento.</h3><p>Fechas, responsables y un siguiente paso.</p></div>
+                  <span class="b-app__chip"><svg class="x-ico"><use href="#i-bell"/></svg>Alertas internas</span>
+                </div>
+                <div class="b-duelist">
+                  <button class="b-due" type="button" data-fill-dialog="obligation-dialog" data-src="detail-01"><span class="x-icon x-icon--warning"><svg><use href="#i-clock"/></svg></span><span><small>Monterrey Centro</small><strong>Licencia de funcionamiento</strong><span>Ana Martínez · En 12 días</span></span><span class="x-badge x-badge--warning">Por vencer</span><svg class="x-ico"><use href="#i-chevron-right"/></svg></button>
+                  <button class="b-due" type="button" data-fill-dialog="obligation-dialog" data-src="detail-02"><span class="x-icon x-icon--danger"><svg><use href="#i-alert"/></svg></span><span><small>San Pedro</small><strong>Programa de protección civil</strong><span>Carlos García · Hace 3 días</span></span><span class="x-badge x-badge--danger">Vencida</span><svg class="x-ico"><use href="#i-chevron-right"/></svg></button>
+                  <button class="b-due" type="button" data-fill-dialog="obligation-dialog" data-src="detail-04"><span class="x-icon x-icon--warning"><svg><use href="#i-clock"/></svg></span><span><small>Guadalajara Norte</small><strong>Permiso de anuncio</strong><span>Laura Pérez · En 24 días</span></span><span class="x-badge x-badge--warning">Por vencer</span><svg class="x-ico"><use href="#i-chevron-right"/></svg></button>
+                </div>
+                <p class="b-app__tip"><svg class="x-ico"><use href="#i-check-circle"/></svg>Registra avances y evidencia durante la renovación, hasta su revisión.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="b-note">Explora las pestañas y los filtros. Los datos y las pantallas son ejemplos ilustrativos.</p>
+      <div class="b-tags b-tags--center">
+        <span><svg class="x-ico"><use href="#i-check"/></svg>Filtra por región y establecimiento</span>
+        <span><svg class="x-ico"><use href="#i-check"/></svg>Prioriza los pendientes</span>
+        <span><svg class="x-ico"><use href="#i-check"/></svg>Consulta responsables y fechas</span>
+      </div>
+    </div>
+
+    <!-- Datos de cada establecimiento del ejemplo (para la ficha y el diálogo) -->
+    <template id="detail-01" data-branch="Monterrey Centro" data-region="Norte" data-title="Licencia de funcionamiento" data-owner="Ana Martínez" data-days="En 12 días" data-status="Por vencer" data-tone="warning" data-where="Monterrey Centro · Región Norte" data-next="Revisar requisitos de renovación y registrar el avance."></template>
+    <template id="detail-02" data-branch="San Pedro" data-region="Norte" data-title="Programa de protección civil" data-owner="Carlos García" data-days="Hace 3 días" data-status="Vencida" data-tone="danger" data-where="San Pedro · Región Norte" data-next="Revisar requisitos de renovación y registrar el avance."></template>
+    <template id="detail-03" data-branch="Apodaca" data-region="Norte" data-title="Dictamen de instalaciones" data-owner="Ana Martínez" data-days="En 90 días" data-status="En revisión" data-tone="info" data-where="Apodaca · Región Norte" data-next="Revisar el documento y su relación con la obligación."></template>
+    <template id="detail-04" data-branch="Guadalajara Norte" data-region="Occidente" data-title="Permiso de anuncio" data-owner="Laura Pérez" data-days="En 24 días" data-status="Por vencer" data-tone="warning" data-where="Guadalajara Norte · Región Occidente" data-next="Revisar requisitos de renovación y registrar el avance."></template>
+    <template id="detail-05" data-branch="Zapopan" data-region="Occidente" data-title="Licencia de funcionamiento" data-owner="Laura Pérez" data-days="En 210 días" data-status="Con evidencia" data-tone="success" data-where="Zapopan · Región Occidente" data-next="Conservar la documentación y monitorear cambios."></template>
+    <template id="detail-06" data-branch="Querétaro Centro" data-region="Centro" data-title="Programa de protección civil" data-owner="Diego López" data-days="En 160 días" data-status="Con evidencia" data-tone="success" data-where="Querétaro Centro · Región Centro" data-next="Conservar la documentación y monitorear cambios."></template>
+    <template id="detail-07" data-branch="CDMX Reforma" data-region="Centro" data-title="Dictamen de instalaciones" data-owner="Sofía Ruiz" data-days="En 45 días" data-status="En revisión" data-tone="info" data-where="CDMX Reforma · Región Centro" data-next="Revisar el documento y su relación con la obligación."></template>
+    <template id="detail-08" data-branch="Puebla Centro" data-region="Centro" data-title="Permiso de anuncio" data-owner="Sofía Ruiz" data-days="En 180 días" data-status="Con evidencia" data-tone="success" data-where="Puebla Centro · Región Centro" data-next="Conservar la documentación y monitorear cambios."></template>
+
+    <dialog class="b-dialog" id="obligation-dialog" aria-labelledby="obligation-title">
+      <div class="b-dialog__inner">
+        <button class="b-dialog__close" type="button" aria-label="Cerrar ejemplo" data-dialog-close><svg class="x-ico"><use href="#i-x"/></svg></button>
+        <p class="x-eyebrow">Obligación de ejemplo</p>
+        <h3 id="obligation-title" data-f="title"></h3>
+        <p class="b-dialog__sub" data-f="where"></p>
+        <span class="x-badge" data-f-tone="tone" data-f="status"></span>
+        <dl class="b-dialog__list">
+          <div><dt>Responsable</dt><dd data-f="owner"></dd></div>
+          <div><dt>Vencimiento</dt><dd data-f="days"></dd></div>
+          <div><dt>Siguiente paso</dt><dd data-f="next"></dd></div>
+        </dl>
+        <p class="b-dialog__legal">Ejemplo demostrativo. Los documentos y requisitos aplicables se revisan para cada establecimiento.</p>
+        <a class="x-btn x-btn--primary x-btn--block" href="#demo" data-dialog-close>Conocerlo para mi empresa <svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </dialog>
+  </section>
+
+  <!-- BLOQUE: evidence-timeline + folder (expediente) -->
+  <section class="x-section" id="expediente">
+    <div class="x-container b-evidence-split">
+      <div>
+        <p class="x-eyebrow">Un expediente por establecimiento</p>
+        <h2 class="x-h2">Cada documento,<br>en su lugar.<br><span class="x-h-accent">Cada sucursal, organizada.</span></h2>
+        <p>Reúne la documentación que sostiene tu operación y conserva su relación con cada obligación.</p>
+        <div class="b-points">
+          <span><svg class="x-ico"><use href="#i-file-check"/></svg>Permisos, licencias y dictámenes.</span>
+          <span><svg class="x-ico"><use href="#i-home"/></svg>Contratos y documentación del inmueble.</span>
+          <span><svg class="x-ico"><use href="#i-receipt"/></svg>Comprobantes de servicios y mantenimientos.</span>
+          <span><svg class="x-ico"><use href="#i-clipboard"/></svg>Actas, observaciones y evidencias.</span>
+        </div>
+        <a class="x-link" href="#demo">Conoce el expediente de tu empresa <svg class="x-ico"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="b-folder">
+        <div class="b-folder__float"><span class="x-icon"><svg><use href="#i-check"/></svg></span><span>En el establecimiento correcto.<small>Con el contexto que necesitas.</small></span></div>
+        <span class="b-folder__tab">MTY · 001</span>
+        <div class="b-folder__card">
+          <div class="b-folder__head">
+            <span class="x-icon"><svg><use href="#i-store"/></svg></span>
+            <div><small>EXPEDIENTE DEL ESTABLECIMIENTO</small><h3>Monterrey Centro</h3><p><svg class="x-ico"><use href="#i-pin"/></svg>Nuevo León · Región Norte</p></div>
+          </div>
+          <div class="x-tabs" role="group" data-switch aria-label="Categoría del expediente de ejemplo">
+            <button class="x-tab" type="button" data-switch-to="folder-permisos" aria-pressed="true"><svg class="x-ico"><use href="#i-file-check"/></svg><span>Permisos y licencias</span></button>
+            <button class="x-tab" type="button" data-switch-to="folder-contratos" aria-pressed="false"><svg class="x-ico"><use href="#i-home"/></svg><span>Contratos e inmueble</span></button>
+            <button class="x-tab" type="button" data-switch-to="folder-servicios" aria-pressed="false"><svg class="x-ico"><use href="#i-receipt"/></svg><span>Servicios y evidencias</span></button>
+          </div>
+          <div id="folder-permisos">
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Licencia de funcionamiento</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge x-badge--success">Revisado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Programa de protección civil</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge x-badge--warning">Por renovar</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Permiso de anuncio</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge">Por revisar</span></div>
+          </div>
+          <div id="folder-contratos" hidden>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Contrato de arrendamiento</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge x-badge--success">Revisado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Anexo del inmueble</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge x-badge--success">Revisado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Comprobante de domicilio</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge">Por revisar</span></div>
+          </div>
+          <div id="folder-servicios" hidden>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Recibo del servicio eléctrico</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge x-badge--success">Revisado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>XLSX</small></span><div><strong>Bitácora de mantenimiento</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge">Por revisar</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>JPG</small></span><div><strong>Evidencia de instalaciones</strong><small>Monterrey Centro · Archivo de ejemplo</small></div><span class="x-badge x-badge--success">Revisado</span></div>
+          </div>
+          <p class="b-folder__foot"><svg class="x-ico"><use href="#i-check-circle"/></svg>Documentos vinculados con su establecimiento.</p>
+        </div>
+        <p class="b-note">Expediente ilustrativo. Los documentos varían según la operación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: steps--4 (seguimiento) -->
+  <section class="x-section x-section--grid x-section--curved">
+    <div class="x-container">
+      <div class="x-split-head">
+        <div>
+          <p class="x-eyebrow">El control continúa después de la carga</p>
+          <h2 class="x-h2">Del documento al<br><span class="x-h-accent">siguiente paso.</span></h2>
+        </div>
+        <p>Cargar un archivo es el inicio. El seguimiento conecta personas, fechas y evidencias hasta su revisión.</p>
+      </div>
+      <div class="b-steps b-steps--4">
+        <article class="b-step b-step--flat"><div class="b-step__top"><span class="x-icon"><svg><use href="#i-folder"/></svg></span><span class="b-step__num">01</span><svg class="b-step__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></div><h3 class="x-title-card">Organiza</h3><p>Vincula cada documento con su establecimiento y obligación.</p></article>
+        <article class="b-step b-step--flat"><div class="b-step__top"><span class="x-icon"><svg><use href="#i-user-check"/></svg></span><span class="b-step__num">02</span><svg class="b-step__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></div><h3 class="x-title-card">Asigna</h3><p>Define al responsable y registra las fechas de seguimiento.</p></article>
+        <article class="b-step b-step--flat"><div class="b-step__top"><span class="x-icon"><svg><use href="#i-bell"/></svg></span><span class="b-step__num">03</span><svg class="b-step__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></div><h3 class="x-title-card">Da seguimiento</h3><p>Consulta alertas internas y registra avances del trámite.</p></article>
+        <article class="b-step b-step--flat"><div class="b-step__top"><span class="x-icon"><svg><use href="#i-clipboard"/></svg></span><span class="b-step__num">04</span></div><h3 class="x-title-card">Revisa</h3><p>Valida la evidencia y conserva el registro de las acciones.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE (solo esta página): context — diagrama de factores + texto -->
+  <section class="x-section">
+    <div class="x-container b-evidence-split">
+      <div class="p-context" role="group" aria-label="Factores para revisar las obligaciones de un establecimiento">
+        <div class="b-flow__node p-context__a"><span class="x-icon"><svg><use href="#i-pin"/></svg></span><strong>Ubicación</strong><span>Estado y municipio</span></div>
+        <div class="b-flow__node p-context__b"><span class="x-icon"><svg><use href="#i-store"/></svg></span><strong>Giro y operación</strong><span>Lo que hace tu sucursal</span></div>
+        <div class="b-flow__node p-context__center"><span class="x-icon x-icon--success"><svg><use href="#i-shield"/></svg></span><strong>Tu establecimiento</strong><span>Su propio contexto</span></div>
+        <div class="b-flow__node p-context__d"><span class="x-icon"><svg><use href="#i-building"/></svg></span><strong>Instalaciones</strong><span>Características del inmueble</span></div>
+        <div class="b-flow__node p-context__e"><span class="x-icon"><svg><use href="#i-file-check"/></svg></span><strong>Revisión de requisitos</strong><span>Fundamento y aplicabilidad</span></div>
+      </div>
+      <div>
+        <p class="x-eyebrow">La misma vista. Diferentes obligaciones.</p>
+        <h2 class="x-h2">Cada ubicación<br>tiene <span class="x-h-accent">su propio contexto.</span></h2>
+        <p>Lo que aplica a una sucursal puede cambiar según su ubicación, giro e instalaciones.</p>
+        <p>Utiliza el catálogo normativo como punto de partida y registra la revisión del fundamento y la aplicabilidad para cada establecimiento.</p>
+        <div class="b-example__result"><svg class="x-ico"><use href="#i-check-circle"/></svg><span><strong>Identifica qué revisar.</strong><small>Documenta por qué aplica.</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: actions-dark (inspecciones) -->
+  <section class="x-section x-section--dark x-section--curved" id="inspecciones">
+    <div class="x-container b-evidence-split x-on-dark">
+      <div>
+        <p class="x-eyebrow">Preparación para inspecciones</p>
+        <h2 class="x-h2">Cuando pidan evidencia,<br><span class="x-h-accent">tenla localizada.</span></h2>
+        <p>Prepara la documentación de cada establecimiento y da seguimiento a lo que ocurra durante la inspección.</p>
+        <a class="x-btn x-btn--white" href="#demo">Conoce cómo preparar tu expediente <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="b-actions">
+        <div class="b-action"><span class="x-icon"><svg><use href="#i-search"/></svg></span><div><h3>Encuentra la documentación</h3><p>Consulta los archivos vinculados con la sucursal.</p></div><svg class="x-ico"><use href="#i-check"/></svg></div>
+        <div class="b-action"><span class="x-icon"><svg><use href="#i-download"/></svg></span><div><h3>Reúne el expediente</h3><p>Descarga los documentos y el informe de seguimiento.</p></div><svg class="x-ico"><use href="#i-check"/></svg></div>
+        <div class="b-action"><span class="x-icon"><svg><use href="#i-clipboard"/></svg></span><div><h3>Atiende las observaciones</h3><p>Registra hallazgos, responsables y acciones correctivas.</p></div><svg class="x-ico"><use href="#i-check"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: steps (para empezar) -->
+  <section class="x-section">
+    <div class="x-container">
+      <div class="x-section-head">
+        <p class="x-eyebrow">Comienza con tu operación</p>
+        <h2 class="x-h2">Un camino claro para <span class="x-h-accent">empezar.</span></h2>
+        <p class="x-lead">Organiza el control desde los establecimientos que ya administras.</p>
+      </div>
+      <div class="b-steps">
+        <article class="x-card b-step"><span class="x-step-num">01</span><h3 class="x-title-card">Registra tus establecimientos</h3><p>Define ubicaciones, responsables y características de la operación.</p></article>
+        <article class="x-card b-step"><span class="x-step-num">02</span><h3 class="x-title-card">Organiza documentos y obligaciones</h3><p>Concentra los archivos y revisa qué corresponde a cada sucursal.</p></article>
+        <article class="x-card b-step"><span class="x-step-num">03</span><h3 class="x-title-card">Activa el seguimiento</h3><p>Registra fechas, consulta pendientes y comienza a darles atención.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: faq -->
+  <section class="x-section x-section--soft x-section--curved" id="preguntas">
+    <div class="x-container b-faq">
+      <div class="b-faq__intro">
+        <p class="x-eyebrow">Resolvamos tus dudas</p>
+        <h2 class="x-h2">Antes de<br><span class="x-h-accent">dar el siguiente paso.</span></h2>
+        <p>Estas son algunas preguntas sobre el control de tus permisos y licencias.</p>
+        <a class="x-btn x-btn--outline" href="#demo">Hablemos de tu operación <svg><use href="#i-arrow-up-right"/></svg></a>
+      </div>
+      <div class="x-faq">
+        <details><summary>¿Para qué tipo de empresas está pensado?</summary><div class="x-faq__body">Para empresas con varias tiendas, sucursales, oficinas, plantas, centros de distribución u otros establecimientos que necesitan organizar documentos y dar seguimiento al cumplimiento desde una misma vista.</div></details>
+        <details><summary>¿Qué documentos puedo organizar?</summary><div class="x-faq__body">Permisos, licencias, contratos, dictámenes, comprobantes de servicios, actas de inspección y evidencias. Cada archivo se vincula con su establecimiento y, cuando corresponde, con la obligación que respalda.</div></details>
+        <details><summary>¿Cómo funciona el seguimiento de vencimientos?</summary><div class="x-faq__body">Cada obligación puede tener un responsable y una fecha. El calendario y las alertas dentro de la plataforma permiten identificar vencimientos próximos y atrasos, y registrar el avance de cada trámite.</div></details>
+        <details><summary>¿Puedo cargar archivos que recibí por correo?</summary><div class="x-faq__body">Sí. Puedes cargar PDF, imágenes, archivos de Office y correos originales en formato .eml o .msg. Los documentos quedan pendientes de revisión; cargar un archivo no lo convierte automáticamente en evidencia validada.</div></details>
+        <details><summary>¿Cómo sé qué obligaciones aplican a cada sucursal?</summary><div class="x-faq__body">El perfil del establecimiento y el catálogo normativo sirven como punto de partida. La aplicabilidad y el fundamento deben revisarse considerando ubicación, giro, instalaciones y operación. El catálogo no sustituye esa revisión jurídica.</div></details>
+        <details><summary>¿Qué puedo preparar para una inspección?</summary><div class="x-faq__body">Puedes reunir la documentación relacionada con el establecimiento, descargar su expediente y registrar observaciones, responsables y acciones de seguimiento. Los requisitos de exhibición y los originales se revisan según la autoridad y el trámite.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: closing -->
+  <section class="x-section--blue x-section--curved b-closing">
+    <div class="x-container x-on-dark">
+      <span class="x-icon"><svg><use href="#i-shield"/></svg></span>
+      <p class="x-eyebrow">De la incertidumbre al seguimiento</p>
+      <h2 class="x-h2">¿Sabes qué sucursales<br>tienen pendientes hoy?</h2>
+      <p class="x-lead">Empieza a organizar sus permisos, documentos<br>y seguimiento en Xternall.</p>
+      <a class="x-btn x-btn--white" href="#demo">Solicita una demo <svg><use href="#i-arrow"/></svg></a>
+      <p class="b-closing__note">Cada establecimiento. Cada responsable. Cada vencimiento.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- BLOQUE: footer (homologado con xternall.com, versión sencilla) -->
+<footer class="b-footer">
+  <div class="b-footer__top">
+    <div class="x-container b-footer__top-inner">
+      <a class="b-footer__logo x-logo x-logo--long" href="#inicio" aria-label="Xternall Permisos y Licencias, inicio"><img src="assets/xternall-logo.svg" alt="Xternall" width="188" height="39"><span class="x-logo__tag x-logo__tag--long">PERMISOS Y LICENCIAS</span></a>
+      <span class="b-footer__product">Control de permisos, licencias y documentación<br>para empresas con múltiples establecimientos.<br><a class="x-link" href="#demo">Conoce Xternall <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></span>
+      <ul class="b-footer__social">
+        <li><a href="https://www.linkedin.com/company/xternall/" target="_blank" rel="noopener" title="Seguir en LinkedIn" aria-label="Seguir en LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
+        <li><a href="https://www.facebook.com/xternallmx" target="_blank" rel="noopener" title="Seguir en Facebook" aria-label="Seguir en Facebook"><svg><use href="#i-facebook"/></svg></a></li>
+        <li><a href="https://www.instagram.com/xternall_mx/?hl=es" target="_blank" rel="noopener" title="Seguir en Instagram" aria-label="Seguir en Instagram"><svg><use href="#i-instagram"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="b-footer__main">
+    <div class="x-container">
+      <div class="b-footer__bottom">
+        <div class="b-footer__legal">
+          <a href="https://xternall.com/aviso-de-privacidad/" target="_blank" rel="noopener">AVISO DE PRIVACIDAD</a>
+        </div>
+        <span>© 2026 Xternall · Grupo TI México</span>
+        <span class="b-footer__tagline">Control preventivo. Evidencia organizada.</span>
+      </div>
+
+      <!-- Versión móvil (≤767px): contacto + colapsables, como en xternall.com -->
+      <div class="b-footer__mobile">
+        <div class="b-footer__mcontact">
+          <h2 class="b-footer__title">Contacto</h2>
+          <a href="mailto:ventas@xternall.com"><svg><use href="#i-mail"/></svg>ventas@xternall.com</a>
+          <a href="tel:8185263220"><svg><use href="#i-phone"/></svg>81 8526 3220</a>
+        </div>
+        <details class="b-fold" data-slide="700">
+          <summary>Legales<svg class="b-fold__icon"><use href="#i-chevron-circle"/></svg></summary>
+          <div class="b-fold__body">
+            <a href="https://xternall.com/aviso-de-privacidad/" target="_blank" rel="noopener">AVISO DE PRIVACIDAD</a>
+            <p class="b-gti"><span>Grupo</span> <span class="b-gti__ti">TI</span> <span>México</span></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+  <div class="b-footer__copybar"><span>© 2026 Xternall · Grupo TI México</span><span>Control preventivo. Evidencia organizada.</span></div>
+</footer>
+
+
+<script src="js/blocks.js" defer></script>
+</body>
+</html>
